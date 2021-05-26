@@ -1,0 +1,31 @@
+div,
+p,
+html,
+body {
+  font-size: 0.9rem;
+}
+.table_header {
+  font-size: 1.2rem;
+  line-height: 3.5;
+  color: blue;
+}
+
+.table_header_cell {
+  font-size: 1.2rem;
+  line-height: 3.5;
+  color: blue;
+}
+
+.icon_container {
+  outline: 1px solid red;
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+.drag_up {
+  margin-top: -5px;
+}
+.visible {
+  visibility: hidden !important;
+}

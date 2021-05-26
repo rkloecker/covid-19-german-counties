@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Covid 19 German Counties App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-dark bg-primary mb-3">
+    <div class="container">
+      <span class="navbar-brand text-center">Covid 19 Info App basierend auf <a class="text-white"
+          href="https://api.corona-zahlen.org/districts">api.corona-zahlen.org</a></span>
+      <button id="refresh" class="btn btn-light">tagesaktuelle Daten (nur alle paar Stunden benutzen)</button>
+    </div>
+  </nav>
+  <div id="search-container" class="container">
+
+    <div id="search" class="">
+      <!-- <h4>Search for Country</h4> -->
+      <form id="search-form">
+        <div class="form-group">
+          <input type="text" id="search-input" class="form-control mb-3" placeholder="Suche in Stadt/Kreis...">
+        </div>
+
+        <button type="submit" class="btn btn-dark btn-block mt-4">zeig Covid 19 Daten
+          (Kreis,Bundesland,Population,Fälle,Tote,inzidenz)</button>
+
+      </form>
+    </div>
+    <div class="">
+      <div id="header_table" class="row font-weight-bold visible my-2">
+        <div class="col-4 font-weight-bold ">
+          Stadt/Kreis <i id="tname" class="fa fa-sort"></i>
+        </div>
+        <div class="col-2 font-weight-bold ">
+          Bundesland <i id="state" class="fa fa-sort"></i>
+        </div>
+        <div class="col-2 font-weight-bold text-center ">
+          Population <i id="pop" class="fa fa-sort"></i>
+        </div>
+        <div class="col-2 font-weight-bold text-center ">
+          Fälle <i id="cases" class="fa fa-sort"></i>
+        </div>
+        <div class="col-1 font-weight-bold text-center ">
+          Tote <i id="deaths" class="fa fa-sort"></i>
+        </div>
+        <div class="col-1 font-weight-bold text-center ">
+          Inzidenz <i id="inz" class="fa fa-sort"></i>
+        </div>
+      </div>
+    </div>
+    <div id="results"></div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
