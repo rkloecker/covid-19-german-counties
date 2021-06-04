@@ -29,3 +29,7 @@ body {
 .visible {
   visibility: hidden !important;
 }
+#header_table i:hover {
+  color: red;
+  cursor: pointer;
+}
