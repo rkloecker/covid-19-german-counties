@@ -125,33 +125,38 @@ async function fetchData(url) {
     console.log("data from ls!");
     return localStorage.getItem(local_storage_key);
   }
-  let resp = await fetch(url);
-  let data = await resp.json();
+  try {
+    let resp = await fetch(url);
+    let data = await resp.json();
 
-  console.log("fetched data!");
-  //console.log(data.data);
-  const obj = data.data;
-  let arr = Object.values(obj).map(
-    ({
-      name,
-      county,
-      stateAbbreviation,
-      population,
-      cases,
-      deaths,
-      weekIncidence,
-    }) => ({
-      name,
-      county,
-      stateAbbreviation,
-      population,
-      cases,
-      deaths,
-      weekIncidence,
-    })
-  );
-  localStorage.setItem(local_storage_key, JSON.stringify(arr));
-  return JSON.stringify(arr);
+    console.log("fetched data!");
+    //console.log(data.data);
+    const obj = data.data;
+    let arr = Object.values(obj).map(
+      ({
+        name,
+        county,
+        stateAbbreviation,
+        population,
+        cases,
+        deaths,
+        weekIncidence,
+      }) => ({
+        name,
+        county,
+        stateAbbreviation,
+        population,
+        cases,
+        deaths,
+        weekIncidence,
+      })
+    );
+    localStorage.setItem(local_storage_key, JSON.stringify(arr));
+    return JSON.stringify(arr);
+  } catch (error) {
+    console.log("failed fetching data");
+    document.getElementById("results").innerHTML = `<p>No data available!</p>`;
+  }
 }
 
 function show(data) {
